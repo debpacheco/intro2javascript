@@ -20,8 +20,21 @@
 //let hello = new String('Hello, there.');
 //alert(hello);
 
+//ARRAY
+//const topThreeMovies = ['Dodgeball', 'Fight Club', 'Grease'];
+//console.log(topThreeMovies);
+//console.log(`my second top movie is:${topThreeMovies[1]}`);
 
-const topThreeMovies = ['Dodgeball', 'Fight Club', 'Grease'];
-console.log(topThreeMovies);
-console.log(`my second top movie is:${topThreeMovies[1]}`);
+var firstName=prompt('What is your first name?');
 
+var lastName=prompt('What is your last name?');
+
+console.log(firstName);
+alert(lastName);
+
+
+
+const birthDay=prompt('What is your birthday?');
+
+confirm(`Is this your birthday? ${birthDay}`);
+alert(`Your birthday is: ${new Date(birthDay)}`);
