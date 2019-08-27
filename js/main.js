@@ -133,9 +133,50 @@ console.log(finalArray[0][0]);
 
 // } while (i < 10);
 
-let arr3 = [1, 2, 3, 4, 5];
+// let arr3 = [1, 2, 3, 4, 5];
 
-arr3.forEach(function(x){
-    console.log('I am '+ x);
-});
+// arr3.forEach(function(x){
+//     console.log('I am '+ x);
+// });
 
+// let myString = "Hi, my name is Debbie";
+
+// for (value of myString) {
+//     console.log(value);
+// }
+
+// let person = [{
+//     firstName : 'Debbie'
+//     lastName : 'Pacheco'
+//     age : 30
+// },
+// {
+//     firstName : 'Jane'
+//     lastName : 'Doe'
+//     age : 32
+// }
+// ];
+
+//create 3 variables of prompt values
+
+const taskOne = prompt('Give me your first task to do?');
+const taskTwo = prompt ('Give me a second task you need to do?');
+const taskThree = prompt('Give me the last task you need to do?');
+
+let arrayOfTasks = [taskOne, taskTwo, taskThree];
+let secondArrayOfTasks = [
+    [taskOne],
+    [taskTwo],
+    [taskThree]
+
+];
+
+console.log(arrayOfTasks);
+console.log('second one: ', secondArrayOfTasks);
+
+
+const limit = 3;
+for(d = 0; d < limit; d++) {
+    secondArrayOfTasks[d].push(`this will take ${Math.floor(Math.random(), 15)}`);
+    console.log(secondArrayOfTasks);
+}
