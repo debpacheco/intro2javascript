@@ -1,182 +1,85 @@
-//const greeting = "hello";
 
-//if (greeting === "hi") {
- //   console.log('Yes, this matches to HI');
-
-//} else if (greeting == "hello"){
-  //  console.log('Yes, this matched HELLO');
-//}else if {
-//    console.log('none of them matched');
-//}
-
-//let faveColor = prompt ('Choose one of the following colors: red,grey, green');
-//const lowerCase = favColor.toLowerCase();
-//switch(lowerCase) {
-  //  case 'red':
-    //case 'Red':
-  //      alert(`You chose ${faveColor}`);
-
-   // break;
-   // case 'grey':
-    //case 'Grey':
-    //        alert(`You chose ${faveColor}`);
-   // break;
-  //  case 'green':
-    //case 'Green':
-      //      alert(`You chose ${faveColor}`);
- //   break;
-   // default:
-  //      alert('Sorry, you did not choose one of the following colors.');
-//}
-
-
-
-//function changeToLowercase (dayValue) {
-//    let dayValue = '';
- //   return dayValue.toLowerCase();
-//}
-
-//console.log(changeToLowercase('HI'));
-/*
-function getWeatherReport (day, time, temperature) {
-    const correctDayFormat = day.toUpperCase();
-    const correctTimeFormat = time.toLowerCase();
-    const correctTemperatureFormat = temperature.toUpperCase();
-    const summary = `Today is ${correctDayFormat} and the time is ${correctTimeFormat}. The temperature is a rocking ${correctTemperatureFormat} degrees.`;
-    return summary;
-
-
-//}
-
-
-function getWeatherSummary(day, time, temperature) {
-    const summary = `Today is ${day} and the time is ${time}. The tem`
-//}
-
-console.log(getWeatherReport('wednesday', '6:00PM', '90'));
-
-*/
-
-let myArrayofRandomShit = [
-    'Talladega Nights',
-    17,
-    true,
-    '2007'
-
-];
-
-/*console.log(myArrayofRandomShit.length); //checks length
-console.log(myArrayofRandomShit[3]);
-console.log(Array.isArray(myArrayofRandomShit));
-myArrayofRandomShit.push('I like cheese'); //adds onto the end of array
-console.log(myArrayofRandomShit.length);
-console.log(myArrayofRandomShit);
-myArrayofRandomShit.unshift('I am now number One.'); // ads to the beginning of the array
-console.log(myArrayofRandomShit[0]);
-myArrayofRandomShit.pop(); // removes the last item in the array
-console.log(myArrayofRandomShit);
-myArrayofRandomShit.shift(); //removes the first item in the array
-console.log(myArrayofRandomShit);
-myArrayofRandomShit.splice(1, 1, 5); //1 param:position 2nd param:if you want to replace; 0 - if you want to add prior to position, 3rdparam: content value
-console.log(myArrayofRandomShit);
-myArrayofRandomShit.slice(1);
-console.log(myArrayofRandomShit);
-let newArrayofInfo = myArrayofRandomShit.slice(1); //because slice creates a new array you must call it under a new var to express it
-console.log(newArrayofInfo);
-newArrayofInfo.indexOf('2007');
-let findPositionToRemove = newArrayofInfo.indexOf('2007');
-console.log(newArrayofInfo.indexOf(false));
-let refreshed = newArrayofInfo.splice(findPositionToRemove, 1);
-console.log(refreshed);
-*/
-
-/*let arrayOne = [
-    'Purple',
-    'MaryJane'
-];
-
-let arrayTwo = [
-    'yellow'
-    'banana'
-];
-
-let finalArray = [
-    arrayOne,
-    arrayTwo
-];
-
-
-console.log(finalArray[0][0]);
-*/
-
-// let x = 0;
-// while (x < 10) {
-//     console.log(x);
-//     x++;
-// 
-
-// for (let i=0; i < 20; i++) {
-//     console.log(i);
+// //ANON function
+// let example = function () {
+//     console.log('hello there');
 // }
 
-// for (let i = 0; i < 10; i++){
-//     if(i==4) {
-//         continue;
-//     }
-//     console.log(i)
+// //Naming function
+// function exampleName() {
+//     console.log('hello there');
 // }
 
-// let i = 0;
-// do {
-//     console.log(i);
-//     i++;
+// // example();
+// // exampleName();
 
-// } while (i < 10);
+// const turnValueUppercase = val => console.log(val.toUpperCase());
+// const multiplyValues = (arg1, arg2) => {return arg1 * arg2};
+// turnValueUppercase('hello');
+// console.log(multiplyValues(2, 6));
 
-// let arr3 = [1, 2, 3, 4, 5];
+// // function turnValueUppercase(val) {
+// //     console.log(val.toUpperCase());
+// // }
 
-// arr3.forEach(function(x){
-//     console.log('I am '+ x);
-// });
 
-// let myString = "Hi, my name is Debbie";
-
-// for (value of myString) {
-//     console.log(value);
-// }
-
-// let person = [{
-//     firstName : 'Debbie'
-//     lastName : 'Pacheco'
-//     age : 30
-// },
-// {
-//     firstName : 'Jane'
-//     lastName : 'Doe'
-//     age : 32
-// }
+// //create an array of three names
+// let names = [
+//     'Jacque',
+//     'Jake',
+//     'Gina',
+//     'Anotha One'
 // ];
 
-//create 3 variables of prompt values
+// //create a greeting that will be taking in a name value
 
-const taskOne = prompt('Give me your first task to do?');
-const taskTwo = prompt ('Give me a second task you need to do?');
-const taskThree = prompt('Give me the last task you need to do?');
-
-let arrayOfTasks = [taskOne, taskTwo, taskThree];
-let secondArrayOfTasks = [
-    [taskOne],
-    [taskTwo],
-    [taskThree]
-
-];
-
-console.log(arrayOfTasks);
-console.log('second one: ', secondArrayOfTasks);
+// const greeting = name => `Good evening, ${name}`;
 
 
-const limit = 3;
-for(d = 0; d < limit; d++) {
-    secondArrayOfTasks[d].push(`this will take ${Math.floor(Math.random(), 15)}`);
-    console.log(secondArrayOfTasks);
+
+// //test result first:
+// console.log(`The array of names ${names}`, `greeting function value: ${greeting ('Example')}`);
+
+// const limit = 3;
+
+// //loop through names and add greeting function to it
+
+// for(j = 0; j < limit; j++) {
+//     console.log(greeting(names[j]));
+// }
+
+//grab elements from HTML:
+// const greeting = document.getElementById('greeting');
+// const groceryList = document.getElementById('groceryList');
+// const groceryItem = document.getElementById('groceryItem');
+// const myGroceryInput = document.getElementById('getGroceryItem');
+
+// let arrayOfGroceryItems = [];
+
+greeting.innerHTML = 'Debbie\'s Grocery List';
+
+//create function to add onto grocery list
+// const addGroceryItem = (arr, value,) => arr.push(value);
+// console.log(addGroceryItem(arrayOfGroceryItems, 'Carrots'));
+// console.log(arrayOfGroceryItems);
+
+function addGroceryItem(arr, value) {
+    arr.push(value);
+   
 }
+
+function ejectGroceryItemToList(val) {
+    //grab list item
+    //goal: push array items to list on html
+    groceryItem.innerHTML = val;
+    for(grocery = 0; grocery < 2; grocery++) {
+        groceryItem.innerHTML = val;
+
+    }
+}
+
+
+addGroceryItem(arrayOfGroceryItems, 'Testing');
+addGroceryItem(arrayOfGroceryItems, 'Chocolate');
+console.log(arrayOfGroceryItems);
+
+ejectGroceryItemToList('TESTING');
