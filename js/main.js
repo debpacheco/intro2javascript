@@ -48,38 +48,46 @@
 // }
 
 //grab elements from HTML:
-// const greeting = document.getElementById('greeting');
-// const groceryList = document.getElementById('groceryList');
-// const groceryItem = document.getElementById('groceryItem');
-// const myGroceryInput = document.getElementById('getGroceryItem');
+const greeting = document.getElementById('greeting');
+const groceryList = document.getElementById('groceryList');
+const groceryItem = document.getElementById('groceryItem');
+const myGroceryInput = document.getElementById('getGroceryItem');
 
-// let arrayOfGroceryItems = [];
+let arrayOfGroceryItems = [];
 
 greeting.innerHTML = 'Debbie\'s Grocery List';
 
 //create function to add onto grocery list
-// const addGroceryItem = (arr, value,) => arr.push(value);
-// console.log(addGroceryItem(arrayOfGroceryItems, 'Carrots'));
-// console.log(arrayOfGroceryItems);
+const addGroceryItem = (arr, value) => arr.push(value);
+console.log(addGroceryItem(arrayOfGroceryItems, 'Carrots'));
+console.log(arrayOfGroceryItems);
 
-function addGroceryItem(arr, value) {
+function addGroceryItemAndDisplay(arr, value) {
     arr.push(value);
-   
+    //let result = arr.push(value);
+   //for (a = 0; a < result.length; a++) {
+//        groceryItem.innerHTML(result[a]);
+//    }
+//    console.log(result);
 }
+
+// addGroceryItemAndDisplay(arrayOfGroceryItems, 'Cucumber');
+
+   //grab list item
+    //goal: push array items to list on html
 
 function ejectGroceryItemToList(val) {
-    //grab list item
-    //goal: push array items to list on html
-    groceryItem.innerHTML = val;
-    for(grocery = 0; grocery < 2; grocery++) {
+    for (grocery = 0; grocery < addGroceryItem.length; grocery++) {
         groceryItem.innerHTML = val;
+     }
 
-    }
-}
+// foreach (val in values) {
+//     groceryItem.innerHTML = values;
 
+// }
 
-addGroceryItem(arrayOfGroceryItems, 'Testing');
-addGroceryItem(arrayOfGroceryItems, 'Chocolate');
-console.log(arrayOfGroceryItems);
+// addGroceryItem(arrayOfGroceryItems, 'Testing');
+// addGroceryItem(arrayOfGroceryItems, 'Chocolate');
+// console.log(arrayOfGroceryItems);
 
 ejectGroceryItemToList('TESTING');
