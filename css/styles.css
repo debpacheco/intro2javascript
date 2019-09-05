@@ -1,4 +1,14 @@
-body {
+.container{
+    margin: auto;
+    text: center;
+
+}
+
+.card{
+    image: center;
+    text: center;
+}
+/* body {
     background-color: skyblue;
 }
 
@@ -25,4 +35,4 @@ li::before {
 h1 {
     font-style: italic;
     color: skyblue;
-}
+} */
