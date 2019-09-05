@@ -1,3 +1,106 @@
+const body = document.body;
+const container = document.createElement('div');
+container.className = 'container text-center';
+
+let test = body.appendChild(container);
+console.log('my html: ', test);
+
+const row = document.createElement('main');
+row.className = 'row';
+
+const content = document.createElement('div');
+
+content.className = 'col-md-6 col-md-offset-3 content';
+
+row.appendChild(content);
+container.appendChild(row);
+body.appendChild(container);
+
+
+function globalFormElements(element, elementType, elementName, elementClass, elementPlaceholder, elementId) {
+    //element:create the type of element you seek
+    const newElement = document.createElement(element);
+
+    newElement.setAttribute('type', elementType);
+    newElement.className = elementClass;
+    newElement.setAttribute('name', elementName);
+    newElement.setAttribute('placeholder', elementPlaceholder);
+    newElement.id = elementId;
+    return newElement;
+
+}
+
+const textAreaElement = (name, placeholder, elementClass, elementId, cols = 4, rows = 2) => {
+    const element = document.createElement('textarea');
+    element.setAttribute('type', 'text');
+    element.className = elementClass;
+    element.setAttribute('name', name);
+    element.setAttribute('placeholder', placeholder);
+    element.setAttribute('rows', rows);
+    element.id = elementId
+    return element;
+}
+const labelGenerator = (forElement, text) => {
+    const label = document.createElement('label');
+    label.setAttribute('for', forElement);
+    label.innerText = text;
+    return label;
+}
+console.log(globalFormElements('input', 'text', 'example', 'form-control bg-primary', 'Type your example here'));
+
+console.log(globalFormElements('textarea', 'text', 'message', 'bg-danger', 'Please let us know your concerns here.'));
+
+
+
+// form tag> input:email-input:subject - textarea - submit button
+
+const form = document.createElement('form')
+const inputEmail = globalFormElements('input', 'email', 'email', 'form-control bg-primary', 'type your example here');
+const inputSubject = globalFormElements('input', 'text', 'subject', 'form-contrl','Enter subject here');
+const textArea = textAreaElement('message', 'Your message here..', 'form-control','message', 5,'');
+const button = document.createElement('button');
+button.className = 'btn-primary btn';
+button.setAttribute('type', 'submit');
+button.innerText = 'Submit now';
+
+form.appendChild(inputEmail);
+form.appendChild(inputSubject);
+form.appendChild(textArea);
+form.appendChild(button);
+
+content.appendChild(form);
+// const selectForm = docum;ent.forms(container);
+// const selectFormElement = document.forms(row).elements(content);
+// const loginForm = document.forms('login'); // Or document.forms['login']
+// loginForm.elements.email.placeholder = 'test@example.com';
+// loginForm.elements.password.placeholder = 'password';
+// row.appendChild(loginForm);
+
+
+// const form = document.createElement('form');
+// const inputEmail = document.createElement('input');
+
+// inputEmail.setAttribute('type', 'email');
+// inputEmail.setAttribute('name', 'email');
+// inputEmail.setAttribute('class', 'form-control');
+// inputEmail.setAttribute('placeholder', 'My Input Email');
+
+// form.appendChild(inputEmail);
+
+// content.appendChild(form);
+
+
+
+// const textAreaElement = (name, placeholder, elementClass, elementId, cols = 4, rows = 2) => {
+//     const element = document.createElement('textarea');
+
+// }
+
+
+
+
+
+// let text = body.appendChild(loginForm);
 
 // const container = document.querySelector('.container');
 // console.log(container);
@@ -38,38 +141,38 @@
 
 // globalListItems();
 
-function catCard(){
+// function catCard(){
 
 
-const container = document.querySelector('.container');
-const card = document.createElement('div');
-card.className = 'text-center col-md-6';
+// const container = document.querySelector('.container');
+// const card = document.createElement('div');
+// card.className = 'text-center col-md-6';
 
-container.appendChild(card);
-const col = document.createElement('div');
-col.className = 'col-md-4';
-card.appendChild(col);
+// container.appendChild(card);
+// const col = document.createElement('div');
+// col.className = 'col-md-4';
+// card.appendChild(col);
 
-const h1 = document.createElement('h1');
-h1.innerText = 'Hello';
-col.appendChild(h1);
+// const h1 = document.createElement('h1');
+// h1.innerText = 'Hello';
+// col.appendChild(h1);
 
-const img = document.createElement('img');
-img.className = 'img-responsive';
-img.setAttribute('src', 'https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80'); 
+// const img = document.createElement('img');
+// img.className = 'img-responsive';
+// img.setAttribute('src', 'https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80'); 
 
-img.setAttribute('alt', 'cat under blanket');
-col.appendChild(img);
-const p = document.createElement('p');
+// img.setAttribute('alt', 'cat under blanket');
+// col.appendChild(img);
+// const p = document.createElement('p');
 
-p.innerText = 'Meow';
+// p.innerText = 'Meow';
 
-col.appendChild(p);
+// col.appendChild(p);
 
-console.log(card);
-}
+// console.log(card);
+// }
 
-catCard();
+// catCard();
 
 
 

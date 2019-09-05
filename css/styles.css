@@ -1,12 +1,12 @@
-.container{
-    margin: auto;
-    text: center;
-
+body, .row {
+    background-color:darkmagenta;
 }
 
-.card{
-    image: center;
-    text: center;
+.content {
+    background-color:snow;
+    padding: 1em;
+    font-family: 'Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif';
+    min-height: 100vh;
 }
 /* body {
     background-color: skyblue;
