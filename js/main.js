@@ -1,38 +1,59 @@
-//create taco receipe using prototypes. First to create what will be needed for the receipe itself
+const container = document.createElement('main');
+//container.className = 'container';
+container.classList.add('container');
+// container.classList.remove('container);
+document.body.appendChild(container);
+container.innerHTML = '<h1>Hello</h1>'
+console.log(container);
 
-function TacoRecipe(meat, seasonings, vegetables, tortilla){
-    this.meat = meat;
-    this.seasonings = seasonings;
-    this.vegetables = vegetables;
-    this.tortilla = tortilla;
+
+//create function
+function movieQuote() {
+    alert('You can do it Brucie!');
+}
+let timer;
+function callQuote() {
+    timer = setInterval(movieQuote, 3000);
 }
 
-//make prototype functions
-TacoRecipe.prototype.prepIngredients = function() {
-    console.log(`Get two pounds of ${this.meat} and add to pan. In a seperate bowl collect ${this.seasonings}. Make sure to get your ${this.vegetables} ready to be washed and cut. Then prepare your ${this.tortilla} on the stove top, until tortilla has a nice brown color.`);
-
+function stopFromRunning() {
+    clearInterval(timer, 10000);
 }
 
-TacoRecipe.prototype.foodAssemble = function(date) {
-    if (date === 'Taco' || date === 'Tuesday') {
-        console.log(`Lucky you!Enjoying ${this.meat} on ${date}, what a lovely Taco Tuesday!`);
-    
-    } else {
-        console.log(`Man, you dont get any ${this.meat} today, Sad!`);
-    }
+const button = document.createElement('button');
+button.setAttribute('onclick', 'callQuote()');
+button.innerText = 'Click for a movie quote';
+button.className = 'btn btn-primary lead btn-lg';
+container.appendChild(button);
+
+const stopButton = document.createElement('button');
+stopButton.className = 'alert alert-danger border-danger border';
+stopButton.setAttribute('onclick', 'stopFromRunning()');
+stopButton.innerText = 'STOP';
+
+button.addEventListener('click', () => {
+    container.appendChild(stopButton);
+    sessionStorage.setItem('TEMPORARY', 'Every problem is temporary');
+sessionStorage.getItem('TEMPORARY');
+localStorage.setItem('DEATH', 'Except for death - Grace');
+localStorage.getItem('DEATH');
+});
+
+
+// //Session storage
+// sessionStorage.setItem('TEMPORARY', 'Every problem is temporary');
+// sessionStorage.getItem('TEMPORARY');
+// localStorage.setItem('DEATH', 'Except for death - Grace');
+// localStorage.getItem('DEATH');
+
+//anon function triggers another function within
+
+const example = function(param) {
+    return test(param);
 }
-//random  NON PROTOTYPE FUNCTION
 
-const getTypeOfMeat = function() {
-    TacoRecipe.call(this.meat);
+function test (testParam) {
+    alert(testParam);
 }
 
-console.log(getTypeOfMeat);
-
-const nameThis = 'debbie'
-const carnitasTaco = new TacoRecipe ('carnitas', ['garlic powder', 'cumin', 'onion', 'salt & pepper'], ['lemon', 'tomatoes', 'onion', 'lettuce/cabbage', 'radish'], 'corn tortilla');
-
-
-
-console.log(carnitasTaco.prepIngredients());
-console.log(TacoRecipe.foodAssemble());
+example('OKAY I SEE WHAT YOU DID THERE THO');
