@@ -1,59 +1,85 @@
-const container = document.createElement('main');
-//container.className = 'container';
-container.classList.add('container');
-// container.classList.remove('container);
-document.body.appendChild(container);
-container.innerHTML = '<h1>Hello</h1>'
-console.log(container);
+// http://placegoat.com/goatse/200/200
+// function playWithApi() {
+//     const url = 'http://placegoat.com/goatse/200/200';
+//     fetch(url)
+//     .then(function(resp){
+//         return resp.json()
+//     })
+//     .then(function(data){
+//         console.log(data);
+//     })
+//     .catch(function(){
 
+//     });
+// };
 
-//create function
-function movieQuote() {
-    alert('You can do it Brucie!');
+// playWithApi();
+div className = 'container';
+const row = document.createElement('div');
+row.className = 'row';
+const wrapper = document.createElement('div');
+wrapper.className = 'col-md-8 col-md-offset-2';
+row.appendChild(wrapper);
+div.appendChild(row);
+document.body.appendChild(div);
+//play with testing JSON:
+const exampleJson = ' { "name": "Debbie", "age": 30} ';
+const exampleTwo = ' { "random": 7, "phrase": "This is supa cool"} ';
+const exampleParse = JSON.parse(exampleJson);
+//wrapper.innerText = example.Json.name;
+const exampleStringify = JSON.stringify(exampleTwo);
+wrapper.innerText = exampleStringify;
+
+console.log(exampleTwo);
+
+//inside a scope
+function practiceScope () {
+    let random = 'Inside scope';
+
+    const phrase = function (sentence) {
+        console.log(sentence);
+
+    }
+    return phrase();
 }
-let timer;
-function callQuote() {
-    timer = setInterval(movieQuote, 3000);
+  
+  //outside
+  let practiceOutside = practiceScope();
+  const example = [1,2,3];
+  const exampleBreakdown = example.forEach( (val) => {
+      return val + 5;
+  });
+
+  console.log(exampleBreakdown);
+
+
+  //TODO: *OPTIONAL* Create class that will call in a basic constructor regarding info.
+//Call api and use at least one paramater placeholder so you can change api value at random
+//One random function to do something with that information
+
+class AboutMe {
+    constructor(name, age, pet) {
+        this.name = name;
+        this.age = age;
+        this.pet = pet;
+
+    }
 }
-
-function stopFromRunning() {
-    clearInterval(timer, 10000);
+AboutMe.prototype.myCat = function() {
+    const url = `https://api.thecatapi.com/v1/${this.petBreed}/images/search`
+    fetch(url);
+    .then ( (transformJson) =>{
+        return transformJson.json();
+    })
+    .then ( (breedData) => {
+        console.log(breedData);
+        const image = document.createElement('img');
+        image.setAttribute('src', breedData.message);
+        wrapper.appendChild(image);
+    })
+    .catch( (err) => {
+        console.log(err);
+    })
 }
-
-const button = document.createElement('button');
-button.setAttribute('onclick', 'callQuote()');
-button.innerText = 'Click for a movie quote';
-button.className = 'btn btn-primary lead btn-lg';
-container.appendChild(button);
-
-const stopButton = document.createElement('button');
-stopButton.className = 'alert alert-danger border-danger border';
-stopButton.setAttribute('onclick', 'stopFromRunning()');
-stopButton.innerText = 'STOP';
-
-button.addEventListener('click', () => {
-    container.appendChild(stopButton);
-    sessionStorage.setItem('TEMPORARY', 'Every problem is temporary');
-sessionStorage.getItem('TEMPORARY');
-localStorage.setItem('DEATH', 'Except for death - Grace');
-localStorage.getItem('DEATH');
-});
-
-
-// //Session storage
-// sessionStorage.setItem('TEMPORARY', 'Every problem is temporary');
-// sessionStorage.getItem('TEMPORARY');
-// localStorage.setItem('DEATH', 'Except for death - Grace');
-// localStorage.getItem('DEATH');
-
-//anon function triggers another function within
-
-const example = function(param) {
-    return test(param);
-}
-
-function test (testParam) {
-    alert(testParam);
-}
-
-example('OKAY I SEE WHAT YOU DID THERE THO');
+const debbie = new AboutMe('Debbie', 30, 'Meep');
+debbie.myCat();
